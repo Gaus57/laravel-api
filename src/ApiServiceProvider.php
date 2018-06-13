@@ -105,7 +105,7 @@ class ApiServiceProvider extends ServiceProvider
 
     protected function initActionRoute(string $action, array $options): void
     {
-        $class = $defaultActions['class'] ?? $this->defaultActions[$action];
+        $class = $options['class'] ?? $this->defaultActions[$action];
         switch ($action) {
             case 'index':
                 Route::get('', function () use ($class, $options) {
