@@ -55,7 +55,7 @@ abstract class AbstractAction
      * @var array
      */
     protected $allowedPerPage = [
-        '10', '20', '50', '100', 'all',
+        '10', '20', '50', '100'
     ];
 
     /**
@@ -129,7 +129,7 @@ abstract class AbstractAction
             ? $perPage
             : $this->defaultPerPage;
 
-        return $perPage && 'all' !== $perPage
+        return $perPage
             ? $result->paginate($perPage)
             : $result->all();
     }
