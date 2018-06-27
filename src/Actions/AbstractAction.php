@@ -131,7 +131,7 @@ abstract class AbstractAction
 
         return $perPage
             ? $result->paginate($perPage)
-            : $result->all();
+            : $result->get();
     }
 
     protected function resourceResponse(?string $resourceClass, $resource, int $statusCode = 200): \Symfony\Component\HttpFoundation\Response
